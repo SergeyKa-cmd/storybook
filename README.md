@@ -7,7 +7,7 @@ ________________________________________________________________________________
   + Using serverless paradigm
   + GItlab CI/CD implementation
   
-  [!alt text](https://c.radikal.ru/c20/2001/ad/b9674b23e70d.png)
+   ![alt text](https://c.radikal.ru/c20/2001/ad/b9674b23e70d.png)
 
 ### Project components
   + Storybook App
