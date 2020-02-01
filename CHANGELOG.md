@@ -1,6 +1,6 @@
 ## 0.1.0 (2020-01-31)
 
- -Manipulating with docker-compose-monitoring.yml file. Monitoring apps version dependencies issue
+ - Manipulating with docker-compose-monitoring.yml file. Monitoring apps version dependencies issue
 
 ## 0.0.2 (2020-01-31)
 
