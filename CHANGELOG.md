@@ -2,11 +2,55 @@
 
  - Manipulating with docker-compose-monitoring.yml file. Monitoring apps version dependencies issue
 
-## 0.0.2 (2020-01-31)
+## 0.0.3 (2020-01-31)
 
 - Trying to deploy monitoring and Storybook app on GCP instace (35.190.208.40)
 - Gitlab docker registry implemented
 
+## 0.0.2 (2020-01-31)
+
+ 1.  Gitlab Runner deployment:
+На сервере, где работает Gitlab CI выполните команду:
+
+docker run -d --name gitlab-runner --restart always \
+-v /srv/gitlab-runner/config:/etc/gitlab-runner \
+-v /var/run/docker.sock:/var/run/docker.sock \
+gitlab/gitlab-runner:latest
+
+После запуска Runner нужно зарегистрировать, это можно сделать командой:
+
+```sserdj7@gitlab-storybook:~$ sudo docker exec -it gitlab-runner gitlab-runner register --run-untagged --locked=false
+Runtime platform                                    arch=amd64 os=linux pid=13 revision=003fe500 version=12.7.1
+Running in system-mode.                            
+                                                   
+Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/):
+https://gitlab.moremam.ru
+Please enter the gitlab-ci token for this runner:
+BpeRXAcBPGbNdhxzqij2
+Please enter the gitlab-ci description for this runner:
+[2a4ffeeee8af]: storybook-runner
+Please enter the gitlab-ci tags for this runner (comma separated):
+linux,xenial,ubuntu,docker
+Registering runner... succeeded                     runner=BpeRXAcB
+Please enter the executor: ssh, virtualbox, docker-ssh+machine, kubernetes, custom, docker-ssh, shell, docker, parallels, docker+machine:
+docker
+Please enter the default Docker image (e.g. ruby:2.6):
+alpine:latest
+Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
+sserdj7@gitlab-storybook:~$ C
+```
+
+2.  Creating Gitlab registry using this article:
+
+ https://dev.to/zaptic/how-to-gitlab-and-docker-registry-2moh
+
+https://docs.gitlab.com/ce/administration/packages/container_registry.html
+
+6.  CI/CD Pipeline prepare - **In progress**
+
+7.  Нужно написать тесты 
+
+ 
 ## 0.0.1 (2020-01-30)
 
 - Created current Storybook repository and added changelog.md
