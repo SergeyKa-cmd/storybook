@@ -1,24 +1,24 @@
-# Storybook app project for OTUS DevOps
+# Итоговый курсовой проект "Развертывание приложения Storybook"
 ___________________________________________________________________________________________________________________________
-"[Storybook](https://storybook.js.org/) is an open source tool for developing UI components in isolation for React, Vue, and Angular. It makes building stunning UIs organized and efficient."
+"[Storybook](https://storybook.js.org/) - это ПО с открытым исходным кодом для разработки  компонентов графическеского интерфейса в отладочной среде для библиотек React, Vue, и Angular, что позволяет сделать разработку наглядной и удобной"
 
-## Project idea
-  + Storybook App deployment in docker containers
-  + Using serverless paradigm
-  + GItlab CI/CD implementation
+## Идея проекта
+  + Развертывание приложения [Storybook](https://storybook.lb01.ru/) в docker контейнерах
+  + Использование парадигмы serverless в приложении
+  + Непрерывная поставка в среде [Gitlab CI/CD](http://35.217.16.30)
   
    ![alt text](https://c.radikal.ru/c20/2001/ad/b9674b23e70d.png)
 
-### Project components
-  + Storybook App
-  + GItlab environment
-  + Monitoring + Logging
-  + Backup
+### Основные компоненты проекта
+  + Приложение [Storybook](https://storybook.lb01.ru/)
+  + [Gitlab](http://35.217.16.30) окружение
+  + Мониторинг контейнеров, сбор логов
+  + Система резервного копирования
 
-### How to use
+### Как используется
 
-### How to test
+### Как тестировать приложение
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Особые настройки
+[Официальная документация](https://cli.vuejs.org/config/).
 
