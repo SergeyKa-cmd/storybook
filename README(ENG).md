@@ -12,7 +12,7 @@ ________________________________________________________________________________
 ### Project components
   + [Storybook App](https://storybook.lb01.ru)
   + [Gitlab environment](http://35.217.16.30)
-  + Monitoring + Logging
+  + [Monitoring](http://104.199.72.253:3000) + Logging
   + Backup
 
 ### How to use
