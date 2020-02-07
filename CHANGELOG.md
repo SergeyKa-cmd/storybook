@@ -1,3 +1,25 @@
+## 0.1.1 (2020-02-06)
+
+ - Backup crucial docker images to Google Container Registry:
+   [Steps to create](https://stackoverflow.com/questions/42697026/install-google-cloud-components-error-from-gcloud-command):
+    + Remove the existing installation using
+    
+    $ sudo apt-get remove google-cloud-sdk
+    + Navigate to https://cloud.google.com/sdk/docs/quickstart-linux and follow the steps to download the correct tar.gz package for your system
+    + Navigate to the download directory and unzip the archive using
+
+    $ tar -zxf google-cloud-sdk-*
+    + Install the SDK using
+
+    $ ./google-cloud-sdk/install.sh
+    + Closing your current terminal session and opening a new one
+    + Run $ gcloud init and re-enable connection to current project ID
+    + Run $ gcloud components install docker-credential-gcr
+    + Push to Google COntainer registry:
+    
+    $ docker push gcr.io/skyfall-267015/storybook-app
+    + All related official [Google Container Registry docs](https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=ru)
+   
 ## 0.1.0 (2020-01-31)
 
  - Manipulating with docker-compose-monitoring.yml file. Monitoring apps version dependencies issue
