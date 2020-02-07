@@ -1,3 +1,9 @@
+## 1.0.0 (2020-02-07)
+
+ - Storybook app deployment on Kubernetes cluster
+ - Giltab deployment on kubernetes cluster
+ - Monitoring
+ 
 ## 0.1.1 (2020-02-06)
 
  - Backup crucial docker images to Google Container Registry:
