@@ -1,3 +1,12 @@
+## 1.0.1 (2020-02-09)
+
+ - Storybook deployment steps on kubernetes cluster:
+   + Connect to cluser: $ gcloud container clusters get-credentials sulaco-uss --zone europe-north1-b --project skyfall-267015
+   + Install nginx ingress: $ helm install nginx stable/nginx-ingress
+   + Add Storybook-app workload from Google container registry and create ingress via "Expose" button
+   + Create prometheus monitoring: $ helm upgrade prom . -f ./charts/prometheus/custom_values.yml --install
+   + Add Grafana workload from Google container registry and create ingress via "Expose" button
+   
 ## 1.0.0 (2020-02-07)
 
  - Storybook app deployment on Kubernetes cluster
