@@ -466,12 +466,12 @@ server:
     ## List of IP addresses at which the Prometheus server service is available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
     ##
-    externalIPs: []
+    #externalIPs: []
 
-    loadBalancerIP: ""
-    loadBalancerSourceRanges: []
-    servicePort: 80
-    type: LoadBalancer
+    #loadBalancerIP: ""
+    #loadBalancerSourceRanges: []
+    #servicePort: 80
+    #type: LoadBalancer
 
   ## Prometheus server pod termination grace period
   ##
@@ -649,7 +649,7 @@ serverFiles:
         relabel_configs:
           - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name, __meta_kubernetes_service_label_app]
             action: keep
-            regex: default;kubernetes;https;storybook
+            regex: default;kubernetes;https;storybook-app
 
       - job_name: 'kubernetes-nodes'
 
@@ -813,7 +813,7 @@ serverFiles:
         relabel_configs:
           - source_labels: [__meta_kubernetes_service_label_component]
             action: keep
-            regex: storybook
+            regex: storybook-app
           - action: labelmap
             regex: __meta_kubernetes_service_label_(.+)
           - source_labels: [__meta_kubernetes_namespace]
