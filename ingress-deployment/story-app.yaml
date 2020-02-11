@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storybook-app
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: storybook-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: storybook-app
+    spec:
+      containers:
+      - name: hello
+        image: "gcr.io/skyfall-267015/storybook-app@sha256:748e9ea6975b6fa8cf423ebc4a6f5f343a730fac19fdfc98dc7b8621f96cc8a4"

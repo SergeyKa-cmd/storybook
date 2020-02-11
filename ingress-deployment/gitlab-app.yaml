@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab-app
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: gitlab-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: gitlab-app
+    spec:
+      containers:
+      - name: gitlab-app
+        image: "gcr.io/skyfall-267015/gitlab-storybook@sha256:3089a9ab5ee6e8a418c35312708408ddf07d2b40808f11e8e307aa119fe49313"
+        volumeMounts:
+        - mountPath: "/srv"
+          name: gitlab-share
+      volumes:
+        - name: gitlab-share
+          persistentVolumeClaim:
+            claimName: gitlab-claim
