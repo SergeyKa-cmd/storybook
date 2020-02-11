@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: storybook-ingress
+  namespace: dev
+spec:
+  rules:
+  - host: storybook.lb01.ru
+    http:
+      paths:
+      - backend:
+          serviceName: storybook-service
+          servicePort: 80
