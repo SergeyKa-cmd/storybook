@@ -6,7 +6,7 @@
    + Add Storybook-app workload from Google container registry and create ingress via "Expose" button
    + Create prometheus monitoring: $ helm upgrade prom . -f ./prometheus/custom_values.yml --install
    + Add Grafana workload $ helm upgrade --install grafana stable/grafana --set "adminPassword=admin"
-   + Create gitlab: $ helm upgrade storybook-gitlab . -f ./gitlab-omibus/values.yaml --install
+   + Create gitlab: $ helm install storybook-gitlab --set externalUrl=http://gitlab.lb01.ru/ stable/gitlab-ce
    
 ## 1.0.0 (2020-02-07)
 
