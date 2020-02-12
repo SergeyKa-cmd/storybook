@@ -1,3 +1,8 @@
+## 1.0.3
+ -Gitlab community edition installing: helm install --name my-release \
+    --set externalUrl=http://your-domain.com/,gitlabRootPassword=pass1234 \
+    stable/gitlab-ce
+    
 ## 1.0.2 (2020-02-12)
 
  - Way to create NFS persistent Volume on GCP:
