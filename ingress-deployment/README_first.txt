@@ -1,5 +1,10 @@
 Порядок запуска:
+<<<<<<< HEAD
 2. Объявим PV gitlab-share:   gitlab-pv.yaml
+=======
+1. Объявим тип storage class: standard-pv.yaml
+2. Объявим PV gitlab-share:   gitlab-pv.yaml - Пропускаем шаг, если был выполнен 1.
+>>>>>>> f19376e8538b8638bb1443e0cf755dbadaa32b5a
 3. Объявим PVC gitlab-claim: gitlab-pvc.yaml
 4. Разворачиваем gitlab-app с подмонитрованными PVC: gitlab-app.yaml
 5. Создаем service gitlab NodePort: gitlab-app-service.yaml

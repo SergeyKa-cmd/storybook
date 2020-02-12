@@ -1,3 +1,17 @@
+## 1.0.2 (2020-02-12)
+
+ - Way to create NFS persistent Volume on GCP:
+  + Create filestore instance: 
+  gcloud filestore instances create nfsstorage --description=Gitlab-app \
+            --tier=STANDARD --file-share=name=VOLUME01,capacity=1T \
+            --network=name=storybook-vpc,reserved-ip-range=10.0.0.0/29 \
+            --zone=europe-west1-b
+  + Apply for Persistent Volume settings: $ kubectl apply -f gitlab-pv.yaml
+  + Apply for Persistent Volume Claim: $ kubectl apply -f gitlab-pvc.yaml
+  + Run Gitlab from Google container registry: $ kubectl apply -f gitlab-app.yaml
+  + Apply NodePort service for Gitlab-app: $ kubectl apply -f gitlab-app-service.yaml
+  + Apply Nginx ingress: $ kubectl apply -f ingress-gitlab.yaml
+  
 ## 1.0.1 (2020-02-09)
 
  - Storybook deployment steps on kubernetes cluster:
