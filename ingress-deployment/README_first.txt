@@ -1,5 +1,4 @@
 Порядок запуска:
-1. Объявим тип storage class: standard-pv.yaml
 2. Объявим PV gitlab-share:   gitlab-pv.yaml - Пропускаем шаг, если был выполнен 1.
 3. Объявим PVC gitlab-claim: gitlab-pvc.yaml
 4. Разворачиваем gitlab-app с подмонитрованными PVC: gitlab-app.yaml
