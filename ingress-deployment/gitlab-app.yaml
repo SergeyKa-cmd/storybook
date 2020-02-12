@@ -17,9 +17,10 @@ spec:
       - name: gitlab-app
         image: "gcr.io/skyfall-267015/gitlab-storybook@sha256:3089a9ab5ee6e8a418c35312708408ddf07d2b40808f11e8e307aa119fe49313"
         volumeMounts:
-        - mountPath: "/srv"
-          name: gitlab-share
+        - name: gitlab-share
+          mountPath: /srv
       volumes:
         - name: gitlab-share
           persistentVolumeClaim:
             claimName: gitlab-claim
+            readOnly: false

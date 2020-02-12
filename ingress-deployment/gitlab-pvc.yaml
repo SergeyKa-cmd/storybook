@@ -6,9 +6,9 @@ metadata:
   namespace: dev
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+  volumeName: gitlab-share
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ssd
-
+  storageClassName: ""
