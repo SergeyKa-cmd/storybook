@@ -1,3 +1,8 @@
+## 2.0.0
+ - Terraform infrastructure prepared with current bugs:
+  + ```gcloud container clusters get-credentials conestoga-sulaco``` still need to promt after terraform error
+  + fix pending persistent volume claim when creating
+  
 ## 1.0.3
  -Gitlab community edition installing: helm install --name my-release \
     --set externalUrl=http://your-domain.com/,gitlabRootPassword=pass1234 \
