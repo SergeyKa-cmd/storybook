@@ -1,0 +1,156 @@
+gcloud container clusters get-credentials sulaco-ss
+How to solve issue :x509: certificate signed by unknown authority
+ -update-ca-certificates -f
+ -apt-get install --reinstall ca-certificates
+
+# resource "kubernetes_deployment" "storybook-app" {
+#   metadata {
+#     name = "storybook-app"
+#     labels = {
+#       app  = "storybook"
+#       role = "master"
+#       tier = "frontend"
+#     }
+#   }
+#   depends_on = ["google_container_node_pool.extra-pool"]
+
+#   spec {
+#     replicas = 1
+
+#     selector {
+#       match_labels = {
+#         app  = "storybook"
+#         role = "master"
+#         tier = "frontend"
+#       }
+#     }
+
+#     template {
+#       metadata {
+#         labels = {
+#           app  = "storybook"
+#           role = "master"
+#           tier = "frontend"
+#         }
+#       }
+#       spec {
+#         container {
+#           image = "sergeykacmd/storybook-app:latest"
+#           name  = "storybook-app"
+
+#           port {
+#             container_port = 80
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+
+# resource "kubernetes_deployment" "storybook-app-dev" {
+#   metadata {
+#     name = "storybook-app-dev"
+#     labels = {
+#       app  = "storybook"
+#       role = "slave"
+#       tier = "frontend"
+#     }
+#   }
+#   depends_on = ["google_container_node_pool.extra-pool"]
+
+#   spec {
+#     replicas = 1
+
+#     selector {
+#       match_labels = {
+#         app  = "storybook"
+#         role = "slave"
+#         tier = "frontend"
+#       }
+#     }
+
+#     template {
+#       metadata {
+#         labels = {
+#           app  = "storybook"
+#           role = "slave"
+#           tier = "frontend"
+#         }
+#       }
+#       spec {
+#         container {
+#           image = "sergeykacmd/storybook-app:latest"
+#           name  = "storybook-app"
+
+#           port {
+#             container_port = 80
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+# resource "kubernetes_deployment" "gitlab-ce" {
+#   metadata {
+#     name = "gitlab-ce"
+#     labels = {
+#       app = "gitlab"
+#     }
+#   }
+#   depends_on = ["google_container_node_pool.extra-pool"]
+
+#   spec {
+#     replicas = 1
+
+#     selector {
+#       match_labels = {
+#         app = "gitlab"
+#       }
+#     }
+#     template {
+#       metadata {
+#         labels = {
+#           app  = "gitlab-ce"
+#           role = "master"
+#           tier = "frontend"
+#         }
+#       }
+#       spec {
+#         container {
+#           image = "gitlab/gitlab-ce"
+#           name  = "gitlab-ce"
+
+#           port {
+#             container_port = 80
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+
+# # resource "kubernetes_ingress" "storybook-ing" {
+# #   metadata {
+# #     name = "storybook-ingress"
+# #   }
+# #   spec {
+# #     backend {
+# #       service_name = "storybook-app"
+# #       service_port = 80
+# #     }
+# #   }
+# # }
+# # resource "kubernetes_ingress" "storybook-ing-dev" {
+# #   metadata {
+# #     name = "storybook-ingress-dev"
+# #   }
+# #   spec {
+# #     backend {
+# #       service_name = "storybook-app-dev"
+# #       service_port = 80
+# #     }
+# #   }
+# # }
